@@ -8,17 +8,23 @@
 
 \## Who I Am
 
+
+
 I am a high school student studying computer science and diving headfirst into artificial intelligence. I am an active learner in the AI space, passionate about understanding how these tools work so I can leverage them in tech and future business ventures.
 
 
 
 \## My Interest in AI
 
+
+
 AI represents the future of technology and problem-solving. I regularly use ChatGPT and Gemini for schoolwork, personal productivity, and building custom chatbots. I enjoy experimenting with different prompts to find practical ways to automate everyday tasks and learning workflows.
 
 
 
 \## Skills and Focus Areas
+
+
 
 \* \*\*Custom Bot Creation:\*\* Designing functional AI bots for personal utility and academic tasks.
 
@@ -30,11 +36,15 @@ AI represents the future of technology and problem-solving. I regularly use Chat
 
 \## Goals
 
+
+
 My primary focus is expanding my knowledge of computer science and AI every day. Long term, my goal is to launch and build my own business powered by innovative AI technologies.
 
 
 
 \## What You Will Find in This Portfolio
+
+
 
 This repository features my hands-on work in prompt engineering, including:
 
@@ -47,6 +57,8 @@ This repository features my hands-on work in prompt engineering, including:
 
 
 \## Connect
+
+
 
 \* \*\*GitHub:\*\* https://github.com/christianwlewis8-dot
 
