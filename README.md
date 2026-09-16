@@ -23,6 +23,7 @@ My primary focus is expanding my knowledge of computer science and AI every day.
 ## What You Will Find in This Portfolio
 
 This repository features my hands-on work in prompt engineering, including:
+
 * Custom bot builds and prompt templates designed for school and personal utility
 * Documented methodology behind prompt structures and iterative refinements
 * Practical examples demonstrating verified AI outputs
@@ -32,3 +33,4 @@ This repository features my hands-on work in prompt engineering, including:
 * **GitHub:** https://github.com/christianwlewis8-dot
 * **LinkedIn:** https://www.linkedin.com/in/christian-lewis-1b516a432
 * **Email:** christianwlewis8@gmail.com
+
