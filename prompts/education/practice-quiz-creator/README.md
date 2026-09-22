@@ -1,42 +1,35 @@
 # Practice Quiz Creator
 
-> \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\*Generates tailored multiple-choice science practice quizzes with answer keys for 5th-grade students.\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\*
+> *Generates tailored multiple-choice science practice quizzes with answer keys for elementary students.*
 
 ## Overview
 
-This prompt uses an R-T-F (Role, Task, Format) structure to act as a 5th-grade science teacher. It generates a clear 3-question multiple-choice quiz on the water cycle with four options per question and an included answer sheet.
+This prompt uses the R-T-F (Role, Task, Format) framework to create a customized science practice quiz. It defines the teacher's role, identifies the quiz topic and intended grade level, and gives clear requirements for the questions and answer key.
 
 **Best for:**
 
-* Quickly drafting practice quizzes for earth science topics
-* Matching reading levels and tone for 10- and 11-year-old students
-* Reviewing core classroom concepts before tests
+- Quickly creating practice quizzes for science topics
+- Matching the vocabulary and difficulty to a specific grade level
+- Reviewing important concepts before a test
 
 **Structure:** R-T-F Framework (Role, Task, Format)
 
-**Technique:** Zero-Shot
+**Technique:** Zero-shot prompting
 
-**Output:** A 3-question multiple-choice quiz followed by an answer sheet.
+**Output:** A multiple-choice quiz with four choices per question and a complete answer key.
 
-\---
+---
 
 ## Quick Start
 
-1. Copy the full prompt below.
-2. Paste it directly into Gemini or your preferred model and run it.
+1. Choose the grade level, age group, number of questions, and science topic.
+2. Replace the placeholders in the prompt.
+3. Paste the completed prompt into an AI model.
 
 ```text
+Role: You are a [GRADE_LEVEL] science teacher who is very good at breaking down science concepts for [AGE_GROUP] students.
 
-Role: you are a 5th grade science teacher who is very good at breaking down earth science concepts for 10 and 11 year old students. 
+Task: I want you to create a [QUESTION_COUNT]-question multiple-choice quiz about [TOPIC] written at a [GRADE_LEVEL] reading level. Make it as easy as possible for that age group to understand.
 
-
-
-Task: I want you to create a 3 question multiple-choice quiz on the water cycle which is written at a 5th grade reading level. Make it as comprehensible as possible for that age group. 
-
-
-
-Format: the format of this little quiz should be multiple choice. There should be 4 answers for each of the questions. and it should include a answer sheet.
-
-
-
-
+Format: The quiz should be multiple choice with exactly four answer choices for each question. Include a complete answer key at the end.
+```
