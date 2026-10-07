@@ -22,16 +22,35 @@ This prompt uses a modified R-T-F structure with an added Context section. It he
 
 ## Quick Start
 
-1. Choose the business type, location, budget, target customers, and services.
-2. Replace the placeholders in the prompt template.
-3. Paste the completed prompt into an AI model.
+1. Open [`prompt.md`](./prompt.md) and copy the template.
+2. Replace the placeholders:
+   - `[BUSINESS_TYPE]`: The kind of local service business being considered (e.g., mobile car detailing).
+   - `[LOCATION]`: The city or service area where the business would operate (e.g., Bluffdale, Utah).
+   - `[STARTING_BUDGET]`: The money available to launch the business (e.g., $1,000).
+   - `[TARGET_CUSTOMERS]`: The main customers the business wants to serve (e.g., busy families and vehicle owners).
+   - `[SERVICES]`: The main services the business would provide (e.g., interior, exterior, and full detailing packages).
+3. Paste it into your AI model of choice and run it.
+4. Review the output and adapt it to what you need.
 
-```text
-Role: You are a business advisor who is good at helping people understand whether a small business idea could be successful.
+---
 
-Context: I am looking at starting a [BUSINESS_TYPE] in [LOCATION] with a starting budget of [STARTING_BUDGET]. The business would mainly serve [TARGET_CUSTOMERS]. It would offer [SERVICES].
+## Examples
 
-Task: I want you to analyze the market for this business and tell me if it would be a good idea. Think through it step by step before answering. Look at the target customers, demand, competition, possible prices, opportunities, challenges, and financial risks.
+See the [`examples/`](./examples/) folder for filled-in demonstrations showing the prompt and the resulting output.
 
-Format: Start with a short summary and then make a SWOT analysis showing the strengths, weaknesses, opportunities, and threats. Include reasonable price ranges, five things the owner should do to help the business succeed, and a final conclusion. Use simple language, clear headings, and keep it under 700 words. Do not make up exact statistics, and explain any assumptions you make.
-```
+---
+
+## Customization Tips
+
+- **Want more detail?** Supply more specific customer and service details in [TARGET_CUSTOMERS] and [SERVICES].
+- **Want it shorter?** Lower the word limit in the Format section.
+- **Different context?** Replace the business type, location, budget, customers, and services for another local business.
+
+---
+
+## Technical Details
+
+- **Structure:** Modified R-T-F Framework (Role, Context, Task, Format)
+- **Technique:** Zero-shot chain-of-thought prompting
+- **Best models:** No comparison across models has been documented.
+- **Placeholders:** 5 inputs: `[BUSINESS_TYPE]`, `[LOCATION]`, `[STARTING_BUDGET]`, `[TARGET_CUSTOMERS]`, `[SERVICES]`.

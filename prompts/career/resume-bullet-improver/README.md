@@ -22,16 +22,34 @@ This prompt uses the C-A-R-E (Context, Action, Result, Example) framework to imp
 
 ## Quick Start
 
-1. Enter the applicant's background, target job, original bullet, and actual responsibilities.
-2. Replace the placeholders in the prompt.
-3. Paste the completed prompt into an AI model.
+1. Open [`prompt.md`](./prompt.md) and copy the template.
+2. Replace the placeholders:
+   - `[APPLICANT_DESCRIPTION]`: The applicant's current level or background (e.g., high school student).
+   - `[TARGET_JOB]`: The job or type of position being pursued (e.g., part-time customer-service job).
+   - `[ORIGINAL_BULLET]`: The basic resume bullet that needs improvement.
+   - `[RESPONSIBILITIES]`: Duties and skills the applicant actually performed.
+3. Paste it into your AI model of choice and run it.
+4. Review the output and adapt it to what you need.
 
-```text
-Context: I am a [APPLICANT_DESCRIPTION] creating a resume for [TARGET_JOB]. My original resume bullet is: "[ORIGINAL_BULLET]." My actual responsibilities included [RESPONSIBILITIES].
+---
 
-Action: Rewrite this into a stronger resume bullet that clearly explains my responsibilities and skills. Use a strong action verb and focus on skills that would matter to an employer. Do not make up numbers, ratings, or responsibilities.
+## Examples
 
-Result: Give me three different resume-bullet options. Keep each option to one sentence, use a professional but natural tone, and keep each one under 30 words.
+See the [`examples/`](./examples/) folder for filled-in demonstrations showing the prompt and the resulting output.
 
-Example: A weak bullet such as "Mowed lawns for people" could become "Managed recurring lawn-care jobs for local customers while maintaining dependable scheduling, clear communication, and consistent work quality."
-```
+---
+
+## Customization Tips
+
+- **Want more detail?** Provide more actual responsibilities in [RESPONSIBILITIES].
+- **Want it shorter?** Lower the word limit in the Result section.
+- **Different context?** Change [APPLICANT_DESCRIPTION] and [TARGET_JOB] for another applicant or role.
+
+---
+
+## Technical Details
+
+- **Structure:** C-A-R-E Framework (Context, Action, Result, Example)
+- **Technique:** Few-shot prompting
+- **Best models:** No comparison across models has been documented.
+- **Placeholders:** 4 inputs: `[APPLICANT_DESCRIPTION]`, `[TARGET_JOB]`, `[ORIGINAL_BULLET]`, `[RESPONSIBILITIES]`.

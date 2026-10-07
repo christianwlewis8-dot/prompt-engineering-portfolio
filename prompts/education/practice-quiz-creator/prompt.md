@@ -12,11 +12,14 @@
 
 ## The Prompt
 
-Role: You are a [GRADE_LEVEL] science teacher who is very good at breaking down science concepts for [AGE_GROUP] students.
+**Role:**
+You are a [GRADE_LEVEL] science teacher who is very good at breaking down science concepts for [AGE_GROUP] students.
 
-Task: I want you to create a [QUESTION_COUNT]-question multiple-choice quiz about [TOPIC] written at a [GRADE_LEVEL] reading level. Make it as easy as possible for that age group to understand.
+**Task:**
+I want you to create a [QUESTION_COUNT]-question multiple-choice quiz about [TOPIC] written at a [GRADE_LEVEL] reading level. Make it as easy as possible for that age group to understand.
 
-Format: The quiz should be multiple choice with exactly four answer choices for each question. Include a complete answer key at the end.
+**Format:**
+The quiz should be multiple choice with exactly four answer choices for each question. Include a complete answer key at the end.
 
 ---
 
@@ -31,7 +34,8 @@ Format: The quiz should be multiple choice with exactly four answer choices for 
 
 ## Output Requirements
 
-- **Question Count:** Exactly the number requested in [QUESTION_COUNT].
-- **Options:** Exactly four multiple-choice options per question.
-- **Answer Key:** A complete answer key at the end.
-- **Reading Level:** Language and vocabulary appropriate for the specified grade level and age group.
+**Format:** A numbered multiple-choice quiz with exactly four choices per question and a complete answer key at the end.
+
+**Constraints:** Generate exactly [QUESTION_COUNT] questions on [TOPIC].
+
+**Tone and Style:** Use language and vocabulary appropriate for [GRADE_LEVEL] and [AGE_GROUP].

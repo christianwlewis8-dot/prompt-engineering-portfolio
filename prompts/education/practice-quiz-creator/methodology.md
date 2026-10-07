@@ -1,36 +1,60 @@
-# Methodology & Prompt Design
+# Design Methodology: Practice Quiz Creator
 
-## Design Choices
+## Design Goal
 
-- **Structure:** R-T-F (Role, Task, Format) Framework
-- **Technique:** Zero-shot prompting
-- **Target Audience:** 5th-grade science students (ages 10-11)
-
-### Rationale
-
-The R-T-F framework was selected because educational prompts require a specific persona and clear output formatting to reach the correct reading level. By assigning a clear **Role** (5th-grade science teacher), the model adopts an encouraging, accessible tone. The **Task** specifies the topic and reading-level constraint, while the **Format** defines the question structure and answer-key requirements.
-
-Zero-shot prompting was selected because the instructions fully describe the requested quiz without requiring an example for the model to copy.
+Create a customized multiple-choice science practice quiz and answer key for elementary students. The existing test uses fifth-grade students ages 10–11.
 
 ---
 
-## Evaluation & Iteration Results
+## Design Approach: Structure and Technique
 
-### Naive Prompt (Baseline)
+**Structure I used:** R-T-F Framework (Role, Task, Format)
 
-> Make a 3-question multiple-choice quiz about the water cycle with an answer key.
+**Why this structure fits my task:**
 
+- The Role identifies the teacher and intended reading level.
+- The Task and Format define the topic, question count, answer choices, and answer key.
+
+**Technique I used:** Zero-shot prompting
+
+**Why this technique fits my task:**
+Zero-shot prompting was selected because the instructions fully describe the requested quiz without requiring an example for the model to copy.
+
+
+---
+
+## Part-by-Part Justification
+
+| Part | What I put here | Why the prompt needs it |
+|------|-----------------|-------------------------|
+| Role | Grade level, science-teacher role, and student age group. | Sets the audience and accessible teaching tone. |
+| Task | Question count, science topic, and grade-level reading requirement. | Defines what to test and how understandable it should be. |
+| Format | Four choices per question and a complete answer key. | Specifies a consistent quiz and teacher answer sheet. |
+
+---
+
+## Testing and Iteration
+
+**Baseline I compared against:**
+```text
+Make a 3-question multiple-choice quiz about the water cycle with an answer key.
+```
+
+| Version | Result / score | What changed |
+|---------|----------------|--------------|
+| Naive baseline | Recorded score: 25/100 | Plain request without the designed structure or technique. |
+| Version 1 | Recorded score: 100/100 | Added a teacher role, grade and age targets, and exactly four choices per question. |
+| Final | Same as Version 1; no separate retest documented | No further prompt revision is recorded. This formatting update does not constitute a new test. |
+
+**What testing showed:** Explicitly declaring the audience age, question constraints, and formatting rules improved the score by 75 points. Giving the AI a defined role prevented generic, high-level explanations and matched the vocabulary to a 5th-grade reading level.
+
+The existing records contain one baseline and one designed run. They do not document a subsequent revision and retest. See [`examples/`](./examples/) for the saved prompts and outputs.
+
+Existing baseline evaluation record:
 - **Score:** 25/100
 - **Evaluator Feedback:** The prompt lacked essential context, grade-level targets, and specific output parameters, forcing the AI to guess the target audience and depth.
 
-### Designed Prompt (R-T-F)
-
-> **Role:** You are a 5th-grade science teacher who is very good at breaking down science concepts for 10- and 11-year-old students.
->
-> **Task:** I want you to create a 3-question multiple-choice quiz about the water cycle written at a 5th-grade reading level. Make it as easy as possible for that age group to understand.
->
-> **Format:** The quiz should be multiple choice with exactly four answer choices for each question. Include a complete answer key at the end.
-
+Existing designed evaluation record:
 - **Score:** 100/100
 - **Evaluator Breakdown:**
   - Clarity & Specificity: 30/30
@@ -39,8 +63,17 @@ Zero-shot prompting was selected because the instructions fully describe the req
   - Output Requirements: 20/20
 - **Evaluator Feedback:** Clean execution of the labeled R-T-F structure with actionable detail. By defining the target demographic, question count, choice parameters, and answer-sheet expectations, it removed ambiguity for the AI.
 
+
+**What I learned:** The R-T-F framework was selected because educational prompts require a specific persona and clear output formatting to reach the correct reading level. By assigning a clear **Role** (5th-grade science teacher), the model adopts an encouraging, accessible tone. The **Task** specifies the topic and reading-level constraint, while the **Format** defines the question structure and answer-key requirements.
+
 ---
 
-## Key Takeaways
+## Strengths and Limitations
 
-Explicitly declaring the audience age, question constraints, and formatting rules improved the score by 75 points. Giving the AI a defined role prevented generic, high-level explanations and matched the vocabulary to a 5th-grade reading level.
+The observations below describe the current prompt and saved example; they are not additional test results.
+
+**Works well when:** The teacher supplies a clear science topic, grade level, age group, and question count.
+
+**Struggles when:** The topic is broad or the teacher needs questions restricted to specific class notes. The current prompt has no input for material already taught; this is a design limitation, not a separately tested failure.
+
+**Would improve next:** Add a way to supply material taught and restrict questions to that material, then test it.

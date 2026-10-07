@@ -12,13 +12,17 @@
 
 ## The Prompt
 
-Context: I am a [APPLICANT_DESCRIPTION] creating a resume for [TARGET_JOB]. My original resume bullet is: "[ORIGINAL_BULLET]." My actual responsibilities included [RESPONSIBILITIES].
+**Context:**
+I am a [APPLICANT_DESCRIPTION] creating a resume for [TARGET_JOB]. My original resume bullet is: "[ORIGINAL_BULLET]." My actual responsibilities included [RESPONSIBILITIES].
 
-Action: Rewrite this into a stronger resume bullet that clearly explains my responsibilities and skills. Use a strong action verb and focus on skills that would matter to an employer. Do not make up numbers, ratings, or responsibilities.
+**Action:**
+Rewrite this into a stronger resume bullet that clearly explains my responsibilities and skills. Use a strong action verb and focus on skills that would matter to an employer. Do not make up numbers, ratings, or responsibilities.
 
-Result: Give me three different resume-bullet options. Keep each option to one sentence, use a professional but natural tone, and keep each one under 30 words.
+**Result:**
+Give me three different resume-bullet options. Keep each option to one sentence, use a professional but natural tone, and keep each one under 30 words.
 
-Example: A weak bullet such as "Mowed lawns for people" could become "Managed recurring lawn-care jobs for local customers while maintaining dependable scheduling, clear communication, and consistent work quality."
+**Example:**
+A weak bullet such as "Mowed lawns for people" could become "Managed recurring lawn-care jobs for local customers while maintaining dependable scheduling, clear communication, and consistent work quality."
 
 ---
 
@@ -33,8 +37,8 @@ Example: A weak bullet such as "Mowed lawns for people" could become "Managed re
 
 ## Output Requirements
 
-- **Options:** Exactly three revised resume bullets.
-- **Length:** Each option must contain one sentence and fewer than 30 words.
-- **Style:** Professional, natural, concise, and action-oriented.
-- **Relevance:** Focus on skills that would matter to an employer.
-- **Accuracy:** Do not invent numbers, ratings, duties, or accomplishments.
+**Format:** Provide exactly three resume-bullet options, each one sentence and fewer than 30 words.
+
+**Constraints:** Use a strong action verb and relevant skills. Do not invent numbers, ratings, responsibilities, or accomplishments.
+
+**Tone and Style:** Professional, natural, concise, and action-oriented.

@@ -22,14 +22,34 @@ This prompt uses the R-T-F (Role, Task, Format) framework to create a customized
 
 ## Quick Start
 
-1. Choose the grade level, age group, number of questions, and science topic.
-2. Replace the placeholders in the prompt.
-3. Paste the completed prompt into an AI model.
+1. Open [`prompt.md`](./prompt.md) and copy the template.
+2. Replace the placeholders:
+   - `[GRADE_LEVEL]`: Target grade level for the reading difficulty (e.g., 5th grade).
+   - `[AGE_GROUP]`: Target age range of the students (e.g., 10- and 11-year-olds).
+   - `[QUESTION_COUNT]`: Total number of questions to generate (e.g., 3).
+   - `[TOPIC]`: Specific science topic being tested (e.g., the water cycle).
+3. Paste it into your AI model of choice and run it.
+4. Review the output and adapt it to what you need.
 
-```text
-Role: You are a [GRADE_LEVEL] science teacher who is very good at breaking down science concepts for [AGE_GROUP] students.
+---
 
-Task: I want you to create a [QUESTION_COUNT]-question multiple-choice quiz about [TOPIC] written at a [GRADE_LEVEL] reading level. Make it as easy as possible for that age group to understand.
+## Examples
 
-Format: The quiz should be multiple choice with exactly four answer choices for each question. Include a complete answer key at the end.
-```
+See the [`examples/`](./examples/) folder for filled-in demonstrations showing the prompt and the resulting output.
+
+---
+
+## Customization Tips
+
+- **Want more detail?** Increase [QUESTION_COUNT] for a longer quiz.
+- **Want it shorter?** Reduce [QUESTION_COUNT] for a shorter quiz.
+- **Different context?** Change [GRADE_LEVEL], [AGE_GROUP], and [TOPIC] for another science class.
+
+---
+
+## Technical Details
+
+- **Structure:** R-T-F Framework (Role, Task, Format)
+- **Technique:** Zero-shot prompting
+- **Best models:** No comparison across models has been documented.
+- **Placeholders:** 4 inputs: `[GRADE_LEVEL]`, `[AGE_GROUP]`, `[QUESTION_COUNT]`, `[TOPIC]`.

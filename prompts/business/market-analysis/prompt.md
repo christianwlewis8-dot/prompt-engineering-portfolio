@@ -12,13 +12,17 @@
 
 ## The Prompt
 
-Role: You are a business advisor who is good at helping people understand whether a small business idea could be successful.
+**Role:**
+You are a business advisor who is good at helping people understand whether a small business idea could be successful.
 
-Context: I am looking at starting a [BUSINESS_TYPE] in [LOCATION] with a starting budget of [STARTING_BUDGET]. The business would mainly serve [TARGET_CUSTOMERS]. It would offer [SERVICES].
+**Context:**
+I am looking at starting a [BUSINESS_TYPE] in [LOCATION] with a starting budget of [STARTING_BUDGET]. The business would mainly serve [TARGET_CUSTOMERS]. It would offer [SERVICES].
 
-Task: I want you to analyze the market for this business and tell me if it would be a good idea. Think through it step by step before answering. Look at the target customers, demand, competition, possible prices, opportunities, challenges, and financial risks.
+**Task:**
+I want you to analyze the market for this business and tell me if it would be a good idea. Think through it step by step before answering. Look at the target customers, demand, competition, possible prices, opportunities, challenges, and financial risks.
 
-Format: Start with a short summary and then make a SWOT analysis showing the strengths, weaknesses, opportunities, and threats. Include reasonable price ranges, five things the owner should do to help the business succeed, and a final conclusion. Use simple language, clear headings, and keep it under 700 words. Do not make up exact statistics, and explain any assumptions you make.
+**Format:**
+Start with a short summary and then make a SWOT analysis showing the strengths, weaknesses, opportunities, and threats. Include reasonable price ranges, five things the owner should do to help the business succeed, and a final conclusion. Use simple language, clear headings, and keep it under 700 words. Do not make up exact statistics, and explain any assumptions you make.
 
 ---
 
@@ -34,10 +38,8 @@ Format: Start with a short summary and then make a SWOT analysis showing the str
 
 ## Output Requirements
 
-- **Summary:** A short overview of the business opportunity.
-- **SWOT Analysis:** Strengths, weaknesses, opportunities, and threats.
-- **Pricing:** Reasonable price ranges for the main services.
-- **Action Steps:** Five practical ways to improve the chance of success.
-- **Conclusion:** A final recommendation about whether the business is worth pursuing.
-- **Length:** Fewer than 700 words.
-- **Accuracy:** No invented exact statistics; assumptions must be clearly identified.
+**Format:** Start with a short summary, then a SWOT analysis, reasonable price ranges, five practical action steps, and a final recommendation. Use clear headings.
+
+**Constraints:** Keep the response under 700 words. Do not invent exact statistics, and identify assumptions.
+
+**Tone and Style:** Use simple language suitable for a new local service-business owner.
