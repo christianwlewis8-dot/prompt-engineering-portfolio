@@ -35,7 +35,7 @@ The sample shows how a basic sentence can become a clearer resume bullet.
 
 ## Testing and Iteration
 
-These scores belong to the original prompts saved in [`examples/output_comparison.md`](./examples/output_comparison.md). The simpler wording in the current prompt has not been tested. The [original notes](./examples/original-methodology.md) keep the earlier scores and feedback.
+These scores belong to the original prompts saved in [`examples/output_comparison.md`](./examples/output_comparison.md). The simpler wording in the current prompt has not been tested.
 
 **Baseline I compared against:**
 

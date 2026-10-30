@@ -38,7 +38,7 @@ I added Context to RTF so the prompt has a place for the business details.
 
 ## Testing and Iteration
 
-These scores belong to the original prompts saved in [`examples/sample-output.md`](./examples/sample-output.md). The simpler wording in the current prompt has not been tested. The [original notes](./examples/original-methodology.md) keep the earlier scores and feedback.
+These scores belong to the original prompts saved in [`examples/sample-output.md`](./examples/sample-output.md). The simpler wording in the current prompt has not been tested.
 
 **Baseline I compared against:**
 

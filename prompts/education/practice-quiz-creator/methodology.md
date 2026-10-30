@@ -2,23 +2,23 @@
 
 ## Design Goal
 
-Make a science quiz and answer key that fit the students' grade and age. The original saved test used fifth grade students ages 10 and 11.
+Help elementary school teachers make quizzes from what their students have learned. The teacher chooses the topic, grade, question type, and number of questions, and gets a simple answer sheet.
 
 ---
 
 ## Design Approach: Structure and Technique
 
-**Structure I used:** RTF: Role, Task, Format
+**Structure I used:** RTF: Role, Task, Format.
 
 **Why this structure fits my task:**
 
-- Role tells the AI who it is helping and the students' ages.
-- Task and Format explain the topic, question count, choices, and answer key.
+I chose the RTF format because in this case it is easy to understand. It can help the teacher or whoever is using this prompt edit and tweak it to get the output they want.
 
-**Technique I used:** Zero shot: gives instructions without an example.
+**Technique I used:** Zero shot. The prompt gives instructions without an example.
 
 **Why this technique fits my task:**
-The request is simple enough to explain without showing a sample quiz.
+
+The teacher gives the information for the quiz directly in the prompt. The tested prompt did not include a sample quiz for the AI to copy.
 
 ---
 
@@ -26,53 +26,61 @@ The request is simple enough to explain without showing a sample quiz.
 
 | Part | What I put here | Why the prompt needs it |
 |---|---|---|
-| Role | Teacher role, grade, and student age. | Helps the AI choose words that fit the class. |
-| Task | Topic, number of questions, and reading level. | Tells the AI what quiz to make. |
-| Format | Four choices per question and an answer key. | Tells the AI how to lay out the answer. |
+| Role | Helping elementary school teachers create quizzes. | Shows who the prompt is for. |
+| Task | Topic, grade, number and type of questions, and what the students learned. | Lets the teacher change what they want the quiz to cover. |
+| Material limit in Task | Use only what the students have learned, and ask for more information if needed. | I did not want the output to quiz kids on subjects they have not learned. That would be a bad test and would not be helpful. |
+| Format | A paper quiz with name and date lines, numbered questions, and a separate answer sheet. | Helps teachers get a quiz they can print. |
 
 ---
 
 ## Testing and Iteration
 
-These scores belong to the original prompts saved in [`examples/output_comparison.md`](./examples/output_comparison.md). The simpler wording in the current prompt has not been tested. The [original notes](./examples/original-methodology.md) keep the earlier scores and feedback.
+The test used sixth grade science, 10 multiple choice questions, and evaporation, condensation, and precipitation in the water cycle.
 
 **Baseline I compared against:**
 
-```text
-Make a 3-question multiple-choice quiz about the water cycle with an answer key.
-```
+I want you to create me a 10 question multiple choice science quiz for sixth grade students about evaporation, condensation, and precipitation in the water cycle. It should be on paper, and give me an answer key.
 
-| Version | Result / score | What changed |
+| Version | Result / score | Notes/What Changed. |
 |---|---|---|
-| Naive baseline | Original recorded score: 25/100 | A plain request. |
-| Version 1 | Original recorded score: 100/100 | Added the teacher role, student grade and age, and four choices per question. |
-| Final | Current wording has no new score | The wording was made simpler. No new test is claimed. |
+| Naive baseline | 35/100 | A plain request for a paper quiz and answer key. |
+| Version 1 | 100/100 | Used Role, Task, and Format; limited questions to taught material; requested a print layout and separate answer sheet. |
+| Final | Same as Version 1 | Kept the tested prompt because it scored 100/100 and was simple and easy to use. |
 
-**What testing showed:** The original records list 25/100 for the basic request and 100/100 for the prompt with labeled parts. The saved quiz adds examples to its questions and explanations to the answer key.
+| Rubric category | Naive | Designed |
+|---|---:|---:|
+| Clarity & Specificity | 15/30 | 30/30 |
+| Structure & Framework Use | 0/30 | 30/30 |
+| Context & Inputs | 10/20 | 20/20 |
+| Output Requirements | 10/20 | 20/20 |
+| **Total** | **35/100** | **100/100** |
 
-Original basic prompt scores:
+The Gem scored the prompts but did not generate quiz outputs. I then ran the prompts separately and collected both quizzes. The model name was not recorded.
 
-The original file did not include scores for each category of the basic prompt. They have not been filled in from its total.
+The exact prompts, feedback, and quiz outputs are saved in [examples/](./examples/).
 
-Original designed prompt scores:
+The 100/100 score belongs to the filled sixth grade example. Other grades, topics, and question types were not tested.
 
-| Category | Designed prompt |
-|---|---:|
-| Clarity & Specificity | 30/30 |
-| Structure & Framework Use | 30/30 |
-| Context & Inputs | 20/20 |
-| Output Requirements | 20/20 |
+**What testing showed:**
 
-**What I learned:** The Role part sets the audience. The Task part sets the topic and reading level. The Format part explains the questions and answer key.
+The biggest difference was that the designed prompt outputs a quiz that stays on topic. For example, the naive quiz talks about transpiration when it was not supposed to. The designed quiz also does a better job of making a quiz that is easier to read for grade school kids.
+
+**What I learned:**
+
+Limiting the questions to material already taught helps keep the quiz useful. The RTF format also makes the prompt easy for the teacher to edit and tweak.
 
 ---
 
 ## Strengths and Limitations
 
-These points describe the prompt and saved example. They are not extra test results.
+**Works well when:**
 
-**Works well when:** The teacher gives a clear topic, grade, age, and question count.
+The teacher gives the material the students have learned. In this test the designed quiz stayed focused on evaporation, condensation, and precipitation.
 
-**Struggles when:** A broad topic can include things the students have not learned. The original prompt does not take class notes.
+**Struggles when:**
 
-**Would improve next:** Let the teacher add class notes and limit the quiz to those notes.
+The teacher needs a file that is ready to print. It sent the quiz as text with the answers attached.
+
+**Would improve next:**
+
+The output. I would make sure that it sends the quiz as pdf and the answer key as a separate PDF.
