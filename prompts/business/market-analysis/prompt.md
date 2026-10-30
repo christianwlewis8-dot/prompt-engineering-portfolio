@@ -2,44 +2,44 @@
 
 ## Overview
 
-**Purpose:** Creates a customized market analysis for a local service business.
+**Purpose:** Helps someone think through a local business idea.
 
-**Structure:** Modified R-T-F Framework (Role, Context, Task, Format)
+**Structure:** Modified RTF: Role, Context, Task, Format
 
-**Technique:** Zero-shot chain-of-thought prompting
+**Technique:** Zero shot chain of thought: asks the AI to think through the task step by step without a worked example.
 
 ---
 
 ## The Prompt
 
 **Role:**
-You are a business advisor who is good at helping people understand whether a small business idea could be successful.
+You are a business advisor who helps people decide whether a small business idea could work.
 
 **Context:**
-I am looking at starting a [BUSINESS_TYPE] in [LOCATION] with a starting budget of [STARTING_BUDGET]. The business would mainly serve [TARGET_CUSTOMERS]. It would offer [SERVICES].
+I want to start a [BUSINESS_TYPE] in [LOCATION]. I have [STARTING_BUDGET] to start. My main customers would be [TARGET_CUSTOMERS]. I would offer [SERVICES].
 
 **Task:**
-I want you to analyze the market for this business and tell me if it would be a good idea. Think through it step by step before answering. Look at the target customers, demand, competition, possible prices, opportunities, challenges, and financial risks.
+Look at whether this business could work. Think through it step by step before answering. Consider who would buy the services, how much interest there might be, other businesses offering them, possible prices, chances to grow, problems, and money risks.
 
 **Format:**
-Start with a short summary and then make a SWOT analysis showing the strengths, weaknesses, opportunities, and threats. Include reasonable price ranges, five things the owner should do to help the business succeed, and a final conclusion. Use simple language, clear headings, and keep it under 700 words. Do not make up exact statistics, and explain any assumptions you make.
+Start with a short summary. Then list strengths, weaknesses, opportunities, and threats. These four lists are called a SWOT analysis. Give reasonable price ranges, five steps the owner could take, and a final opinion. Use clear headings and simple words. Keep the answer under 700 words. Do not make up exact numbers or statistics. Say what you are assuming.
 
 ---
 
 ## Context and Inputs
 
-- **[BUSINESS_TYPE]:** The kind of local service business being considered (e.g., mobile car detailing).
-- **[LOCATION]:** The city or service area where the business would operate (e.g., Bluffdale, Utah).
-- **[STARTING_BUDGET]:** The money available to launch the business (e.g., $1,000).
-- **[TARGET_CUSTOMERS]:** The main customers the business wants to serve (e.g., busy families and vehicle owners).
-- **[SERVICES]:** The main services the business would provide (e.g., interior, exterior, and full detailing packages).
+- **[BUSINESS_TYPE]:** The kind of business, such as mobile car detailing.
+- **[LOCATION]:** The city or area the business will serve.
+- **[STARTING_BUDGET]:** How much money is available to start.
+- **[TARGET_CUSTOMERS]:** The people the business hopes to serve.
+- **[SERVICES]:** The services the business will offer.
 
 ---
 
 ## Output Requirements
 
-**Format:** Start with a short summary, then a SWOT analysis, reasonable price ranges, five practical action steps, and a final recommendation. Use clear headings.
+**Format:** A short summary, strengths and weaknesses, chances to grow, outside risks, price ranges, five next steps, and a final opinion.
 
-**Constraints:** Keep the response under 700 words. Do not invent exact statistics, and identify assumptions.
+**Constraints:** Keep the answer under 700 words. Do not make up exact numbers or statistics. Explain assumptions.
 
-**Tone and Style:** Use simple language suitable for a new local service-business owner.
+**Tone and Style:** Use simple words that a new business owner can understand.

@@ -2,40 +2,40 @@
 
 ## Overview
 
-**Purpose:** Generates a customized multiple-choice practice quiz and answer key tailored to a specific grade level and topic.
+**Purpose:** Makes a science quiz and answer key for elementary students.
 
-**Structure:** R-T-F Framework (Role, Task, Format)
+**Structure:** RTF: Role, Task, Format
 
-**Technique:** Zero-shot prompting
+**Technique:** Zero shot: gives instructions without an example.
 
 ---
 
 ## The Prompt
 
 **Role:**
-You are a [GRADE_LEVEL] science teacher who is very good at breaking down science concepts for [AGE_GROUP] students.
+You are a [GRADE_LEVEL] science teacher who explains science clearly to [AGE_GROUP] students.
 
 **Task:**
-I want you to create a [QUESTION_COUNT]-question multiple-choice quiz about [TOPIC] written at a [GRADE_LEVEL] reading level. Make it as easy as possible for that age group to understand.
+Create a quiz with [QUESTION_COUNT] questions about [TOPIC]. Use words and a level of difficulty that fit [GRADE_LEVEL] students.
 
 **Format:**
-The quiz should be multiple choice with exactly four answer choices for each question. Include a complete answer key at the end.
+Make every question multiple choice with exactly four answer choices. Put a complete answer key at the end.
 
 ---
 
 ## Context and Inputs
 
-- **[GRADE_LEVEL]:** Target grade level for the reading difficulty (e.g., 5th grade).
-- **[AGE_GROUP]:** Target age range of the students (e.g., 10- and 11-year-olds).
-- **[QUESTION_COUNT]:** Total number of questions to generate (e.g., 3).
-- **[TOPIC]:** Specific science topic being tested (e.g., the water cycle).
+- **[GRADE_LEVEL]:** The students' grade, such as fifth grade.
+- **[AGE_GROUP]:** The students' ages, such as 10 and 11.
+- **[QUESTION_COUNT]:** The number of questions.
+- **[TOPIC]:** The science topic.
 
 ---
 
 ## Output Requirements
 
-**Format:** A numbered multiple-choice quiz with exactly four choices per question and a complete answer key at the end.
+**Format:** A multiple choice quiz with four choices for each question and an answer key.
 
-**Constraints:** Generate exactly [QUESTION_COUNT] questions on [TOPIC].
+**Constraints:** Use exactly [QUESTION_COUNT] questions about [TOPIC]. Give each question four choices.
 
-**Tone and Style:** Use language and vocabulary appropriate for [GRADE_LEVEL] and [AGE_GROUP].
+**Tone and Style:** Use clear words that fit the students' grade and age.

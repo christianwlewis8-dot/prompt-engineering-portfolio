@@ -2,87 +2,86 @@
 
 ## Design Goal
 
-Help a new local service-business owner assess customers, competition, pricing, opportunities, challenges, and financial risks. The existing test examines a mobile car-detailing business in Bluffdale, Utah.
+Help a new business owner think through a local service business. The original saved test used a mobile car detailing business in Bluffdale, Utah.
 
 ---
 
 ## Design Approach: Structure and Technique
 
-**Structure I used:** Modified R-T-F Framework (Role, Context, Task, Format)
+**Structure I used:** Modified RTF: Role, Context, Task, Format
 
 **Why this structure fits my task:**
 
-- Market analysis depends on business details, so Context adds location, budget, customers, and services.
-- Role, Task, and Format specify the advisor perspective, analytical scope, and required deliverables.
+- Context adds the business details needed to make the answer useful.
+- Role, Task, and Format explain whose view to take, what to cover, and how to arrange the answer.
 
-**Technique I used:** Zero-shot chain-of-thought prompting
+**Technique I used:** Zero shot chain of thought: asks the AI to think through the task step by step without a worked example.
 
 **Why this technique fits my task:**
-Zero-shot chain-of-thought prompting was selected because market analysis requires the model to consider several connected factors. The instruction to think through the market step by step encourages more careful analysis without requiring a worked example.
-
+The task asks about several things that affect each other. Asking the AI to think through them step by step is meant to help it consider those connections. This instruction does not prove the answer is correct.
 
 **Example of modifying a framework:**
-I started from R-T-F (Role, Task, Format) and added Context. This section supplies the location, startup budget, target customers, and services that the plain framework left unspecified. My final structure was Role, Context, Task, Format.
+I added Context to RTF so the prompt has a place for the business details.
 
 ---
 
-## Part-by-Part Justification
+## Part by Part Justification
 
 | Part | What I put here | Why the prompt needs it |
-|------|-----------------|-------------------------|
-| Role | A small-business advisor. | Sets the advisory perspective. |
-| Context | Business type, location, starting budget, customers, and services. | Makes the analysis specific to the proposed business. |
-| Task | Demand, competition, prices, opportunities, challenges, risks, and a step-by-step instruction. | Defines the factors to consider and the reasoning technique. |
-| Format | Summary, SWOT, price ranges, five actions, conclusion, word limit, and accuracy rules. | Keeps the answer organized, concise, and explicit about assumptions. |
+|---|---|---|
+| Role | A business advisor. | Sets the kind of help wanted. |
+| Context | Business, location, budget, customers, and services. | Gives details about this business idea. |
+| Task | Customers, interest, other businesses, prices, risks, and a step by step instruction. | Tells the AI what to consider. |
+| Format | Summary, four lists, prices, five steps, final opinion, and word limit. | Makes the answer easier to read and use. |
 
 ---
 
 ## Testing and Iteration
 
+These scores belong to the original prompts saved in [`examples/sample-output.md`](./examples/sample-output.md). The simpler wording in the current prompt has not been tested. The [original notes](./examples/original-methodology.md) keep the earlier scores and feedback.
+
 **Baseline I compared against:**
+
 ```text
 Analyze the market for a mobile car-detailing business in Bluffdale, Utah, and tell me whether it could be successful.
 ```
 
 | Version | Result / score | What changed |
-|---------|----------------|--------------|
-| Naive baseline | Recorded score: 25/100 | Plain request without the designed structure or technique. |
-| Version 1 | Recorded score: 100/100 | Added business background, budget, customers, services, labeled sections, a reasoning instruction, and output constraints. |
-| Final | Same as Version 1; no separate retest documented | No further prompt revision is recorded. This formatting update does not constitute a new test. |
+|---|---|---|
+| Naive baseline | Original recorded score: 25/100 | A plain request. |
+| Version 1 | Original recorded score: 100/100 | Added the business details, budget, labeled parts, step by step instruction, and answer rules. |
+| Final | Current wording has no new score | The wording was made simpler. No new test is claimed. |
 
-**What testing showed:** Adding the location, budget, customers, services, and required output format improved the score by 75 points. The designed prompt produced a more organized and practical answer with a SWOT analysis, price ranges, action steps, and a clear conclusion. It also satisfied the portfolio requirement to use a technique beyond standard zero-shot prompting.
+**What testing showed:** The original records list 25/100 for the basic request and 100/100 for the prompt with labeled parts. The longer prompt produced clear sections, prices, five steps, and a final opinion.
 
-The existing records contain one baseline and one designed run. They do not document a subsequent revision and retest. See [`examples/`](./examples/) for the saved prompts and outputs.
+Original basic prompt scores:
 
-Existing baseline evaluation record:
-- **Score:** 25/100
-- **Rubric Breakdown:**
-  - Clarity & Specificity: 15/30
-  - Structure & Framework Use: 0/30
-  - Context & Inputs: 10/20
-  - Output Requirements: 0/20
-- **Evaluator Feedback:** The request identified the business and location, but it lacked analytical boundaries, a prompting framework, important business details, and output requirements.
+| Category | Basic prompt |
+|---|---:|
+| Clarity & Specificity | 15/30 |
+| Structure & Framework Use | 0/30 |
+| Context & Inputs | 10/20 |
+| Output Requirements | 0/20 |
 
-Existing designed evaluation record:
-- **Score:** 100/100
-- **Rubric Breakdown:**
-  - Clarity & Specificity: 30/30
-  - Structure & Framework Use: 30/30
-  - Context & Inputs: 20/20
-  - Output Requirements: 20/20
-- **Evaluator Feedback:** The labeled Role, Context, Task, and Format sections provided clear analytical expectations, business background, required deliverables, a length limit, and factual guardrails. The step-by-step instruction also clearly demonstrated zero-shot chain-of-thought prompting.
+Original designed prompt scores:
 
+| Category | Designed prompt |
+|---|---:|
+| Clarity & Specificity | 30/30 |
+| Structure & Framework Use | 30/30 |
+| Context & Inputs | 20/20 |
+| Output Requirements | 20/20 |
 
-**What I learned:** The R-T-F framework was expanded with a **Context** section because a useful market analysis depends on details about the location, startup budget, customers, and services. The **Role** places the model in the position of a business advisor. The **Task** identifies the areas that must be analyzed, and the **Format** controls how the final response is organized.
+**What I learned:** Adding Context gives the AI the location, budget, customers, and services. Task says what to look at. Format tells it how to arrange the answer.
 
 ---
 
 ## Strengths and Limitations
 
-The observations below describe the current prompt and saved example; they are not additional test results.
+These points describe the prompt and saved example. They are not extra test results.
 
-**Works well when:** The owner supplies a clear location, starting budget, target customers, and service list.
+**Works well when:** The owner gives the location, budget, customers, and services.
 
-**Struggles when:** Verified local data is unavailable. The prompt prohibits invented exact statistics, but that does not verify broader claims about demand or pricing; the saved output still makes confident market claims.
+**Struggles when:** The AI does not have checked local facts. The saved answer makes confident claims about demand and prices that still need checking.
 
-**Would improve next:** Require clearer separation of supported facts, assumptions, and estimates, then test whether conclusions become better supported.
+**Would improve next:** Ask the AI to separate checked facts from guesses and price estimates.

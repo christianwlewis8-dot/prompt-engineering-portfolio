@@ -2,78 +2,77 @@
 
 ## Design Goal
 
-Create a customized multiple-choice science practice quiz and answer key for elementary students. The existing test uses fifth-grade students ages 10–11.
+Make a science quiz and answer key that fit the students' grade and age. The original saved test used fifth grade students ages 10 and 11.
 
 ---
 
 ## Design Approach: Structure and Technique
 
-**Structure I used:** R-T-F Framework (Role, Task, Format)
+**Structure I used:** RTF: Role, Task, Format
 
 **Why this structure fits my task:**
 
-- The Role identifies the teacher and intended reading level.
-- The Task and Format define the topic, question count, answer choices, and answer key.
+- Role tells the AI who it is helping and the students' ages.
+- Task and Format explain the topic, question count, choices, and answer key.
 
-**Technique I used:** Zero-shot prompting
+**Technique I used:** Zero shot: gives instructions without an example.
 
 **Why this technique fits my task:**
-Zero-shot prompting was selected because the instructions fully describe the requested quiz without requiring an example for the model to copy.
-
+The request is simple enough to explain without showing a sample quiz.
 
 ---
 
-## Part-by-Part Justification
+## Part by Part Justification
 
 | Part | What I put here | Why the prompt needs it |
-|------|-----------------|-------------------------|
-| Role | Grade level, science-teacher role, and student age group. | Sets the audience and accessible teaching tone. |
-| Task | Question count, science topic, and grade-level reading requirement. | Defines what to test and how understandable it should be. |
-| Format | Four choices per question and a complete answer key. | Specifies a consistent quiz and teacher answer sheet. |
+|---|---|---|
+| Role | Teacher role, grade, and student age. | Helps the AI choose words that fit the class. |
+| Task | Topic, number of questions, and reading level. | Tells the AI what quiz to make. |
+| Format | Four choices per question and an answer key. | Tells the AI how to lay out the answer. |
 
 ---
 
 ## Testing and Iteration
 
+These scores belong to the original prompts saved in [`examples/output_comparison.md`](./examples/output_comparison.md). The simpler wording in the current prompt has not been tested. The [original notes](./examples/original-methodology.md) keep the earlier scores and feedback.
+
 **Baseline I compared against:**
+
 ```text
 Make a 3-question multiple-choice quiz about the water cycle with an answer key.
 ```
 
 | Version | Result / score | What changed |
-|---------|----------------|--------------|
-| Naive baseline | Recorded score: 25/100 | Plain request without the designed structure or technique. |
-| Version 1 | Recorded score: 100/100 | Added a teacher role, grade and age targets, and exactly four choices per question. |
-| Final | Same as Version 1; no separate retest documented | No further prompt revision is recorded. This formatting update does not constitute a new test. |
+|---|---|---|
+| Naive baseline | Original recorded score: 25/100 | A plain request. |
+| Version 1 | Original recorded score: 100/100 | Added the teacher role, student grade and age, and four choices per question. |
+| Final | Current wording has no new score | The wording was made simpler. No new test is claimed. |
 
-**What testing showed:** Explicitly declaring the audience age, question constraints, and formatting rules improved the score by 75 points. Giving the AI a defined role prevented generic, high-level explanations and matched the vocabulary to a 5th-grade reading level.
+**What testing showed:** The original records list 25/100 for the basic request and 100/100 for the prompt with labeled parts. The saved quiz adds examples to its questions and explanations to the answer key.
 
-The existing records contain one baseline and one designed run. They do not document a subsequent revision and retest. See [`examples/`](./examples/) for the saved prompts and outputs.
+Original basic prompt scores:
 
-Existing baseline evaluation record:
-- **Score:** 25/100
-- **Evaluator Feedback:** The prompt lacked essential context, grade-level targets, and specific output parameters, forcing the AI to guess the target audience and depth.
+The original file did not include scores for each category of the basic prompt. They have not been filled in from its total.
 
-Existing designed evaluation record:
-- **Score:** 100/100
-- **Evaluator Breakdown:**
-  - Clarity & Specificity: 30/30
-  - Structure & Framework Use: 30/30
-  - Context & Inputs: 20/20
-  - Output Requirements: 20/20
-- **Evaluator Feedback:** Clean execution of the labeled R-T-F structure with actionable detail. By defining the target demographic, question count, choice parameters, and answer-sheet expectations, it removed ambiguity for the AI.
+Original designed prompt scores:
 
+| Category | Designed prompt |
+|---|---:|
+| Clarity & Specificity | 30/30 |
+| Structure & Framework Use | 30/30 |
+| Context & Inputs | 20/20 |
+| Output Requirements | 20/20 |
 
-**What I learned:** The R-T-F framework was selected because educational prompts require a specific persona and clear output formatting to reach the correct reading level. By assigning a clear **Role** (5th-grade science teacher), the model adopts an encouraging, accessible tone. The **Task** specifies the topic and reading-level constraint, while the **Format** defines the question structure and answer-key requirements.
+**What I learned:** The Role part sets the audience. The Task part sets the topic and reading level. The Format part explains the questions and answer key.
 
 ---
 
 ## Strengths and Limitations
 
-The observations below describe the current prompt and saved example; they are not additional test results.
+These points describe the prompt and saved example. They are not extra test results.
 
-**Works well when:** The teacher supplies a clear science topic, grade level, age group, and question count.
+**Works well when:** The teacher gives a clear topic, grade, age, and question count.
 
-**Struggles when:** The topic is broad or the teacher needs questions restricted to specific class notes. The current prompt has no input for material already taught; this is a design limitation, not a separately tested failure.
+**Struggles when:** A broad topic can include things the students have not learned. The original prompt does not take class notes.
 
-**Would improve next:** Add a way to supply material taught and restrict questions to that material, then test it.
+**Would improve next:** Let the teacher add class notes and limit the quiz to those notes.

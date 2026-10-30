@@ -2,43 +2,43 @@
 
 ## Overview
 
-**Purpose:** Rewrites a basic work-experience statement into several concise, professional resume bullets.
+**Purpose:** Turns a basic job description into clear resume bullets without making up details.
 
-**Structure:** C-A-R-E Framework (Context, Action, Result, Example)
+**Structure:** CARE: Context, Action, Result, Example
 
-**Technique:** Few-shot prompting
+**Technique:** Few shot: shows an example for the AI to follow.
 
 ---
 
 ## The Prompt
 
 **Context:**
-I am a [APPLICANT_DESCRIPTION] creating a resume for [TARGET_JOB]. My original resume bullet is: "[ORIGINAL_BULLET]." My actual responsibilities included [RESPONSIBILITIES].
+I am a [APPLICANT_DESCRIPTION] making a resume for [TARGET_JOB]. My original resume bullet is: "[ORIGINAL_BULLET]." My real duties included [RESPONSIBILITIES].
 
 **Action:**
-Rewrite this into a stronger resume bullet that clearly explains my responsibilities and skills. Use a strong action verb and focus on skills that would matter to an employer. Do not make up numbers, ratings, or responsibilities.
+Rewrite the bullet so it explains my work and skills clearly. Start with a strong action word. Focus on skills that matter for the job. Do not make up numbers, ratings, or duties.
 
 **Result:**
-Give me three different resume-bullet options. Keep each option to one sentence, use a professional but natural tone, and keep each one under 30 words.
+Give me three different resume bullets. Make each one a single sentence with fewer than 30 words. Use clear words that fit a resume.
 
 **Example:**
-A weak bullet such as "Mowed lawns for people" could become "Managed recurring lawn-care jobs for local customers while maintaining dependable scheduling, clear communication, and consistent work quality."
+A basic bullet such as "Mowed lawns for people" could become "Managed regular lawn care jobs for local customers, kept a dependable schedule, and communicated clearly."
 
 ---
 
 ## Context and Inputs
 
-- **[APPLICANT_DESCRIPTION]:** The applicant's current level or background (e.g., high school student).
-- **[TARGET_JOB]:** The job or type of position being pursued (e.g., part-time customer-service job).
-- **[ORIGINAL_BULLET]:** The basic resume bullet that needs improvement.
-- **[RESPONSIBILITIES]:** Duties and skills the applicant actually performed.
+- **[APPLICANT_DESCRIPTION]:** Who is writing the resume, such as a high school student.
+- **[TARGET_JOB]:** The job they want.
+- **[ORIGINAL_BULLET]:** The resume sentence they want to improve.
+- **[RESPONSIBILITIES]:** The work they actually did.
 
 ---
 
 ## Output Requirements
 
-**Format:** Provide exactly three resume-bullet options, each one sentence and fewer than 30 words.
+**Format:** Three resume bullets, each one sentence and fewer than 30 words.
 
-**Constraints:** Use a strong action verb and relevant skills. Do not invent numbers, ratings, responsibilities, or accomplishments.
+**Constraints:** Use only the person's real experience. Do not invent numbers, ratings, duties, or achievements.
 
-**Tone and Style:** Professional, natural, concise, and action-oriented.
+**Tone and Style:** Keep the writing clear, natural, and suitable for a resume.

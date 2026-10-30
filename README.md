@@ -1,36 +1,37 @@
 # About Me
 
-*High school student and aspiring entrepreneur exploring artificial intelligence, prompt engineering, and custom bot development.*
+*I am a high school student learning about AI and how it can help with everyday tasks and business ideas.*
 
 ## Who I Am
 
-I am a high school student studying computer science and diving headfirst into artificial intelligence. I am an active learner in the AI space, passionate about understanding how these tools work so I can leverage them in tech and future business ventures.
+I am Christian Lewis. I am a high school student studying computer science. I want to understand how AI works and how to use it well.
 
 ## My Interest in AI
 
-AI represents the future of technology and problem-solving. I regularly use ChatGPT and Gemini for schoolwork, personal productivity, and building custom chatbots. I enjoy experimenting with different prompts to find practical ways to automate everyday tasks and learning workflows.
+I use ChatGPT and Gemini for learning, planning, and building bots. I like trying different prompts to see how the answers change.
 
 ## Skills and Focus Areas
 
-* **Custom Bot Creation:** Designing functional AI bots for personal utility and academic tasks.
-* **Daily Prompt Exploration:** Testing prompt strategies across tools like ChatGPT and Gemini to improve output quality.
-* **Applied AI for Business:** Learning how natural language processing and LLMs can be integrated into real-world business solutions.
+- **Building bots:** Making tools that help with everyday tasks.
+- **Writing prompts:** Giving clear instructions and checking the answers.
+- **Business ideas:** Learning how AI can help someone run a business.
 
 ## Goals
 
-My primary focus is expanding my knowledge of computer science and AI every day. Long term, my goal is to launch and build my own business powered by innovative AI technologies.
+I want to keep learning about computer science and AI. I also want to start my own business.
 
 ## What You Will Find in This Portfolio
 
-This repository features my hands-on work in prompt engineering, including:
+There are three prompts:
 
-* Custom bot builds and prompt templates designed for school and personal utility
-* Documented methodology behind prompt structures and iterative refinements
-* Practical examples demonstrating verified AI outputs
+- [Business](./prompts/business/market-analysis/README.md): Thinking through a local business idea.
+- [Career](./prompts/career/resume-bullet-improver/README.md): Improving resume bullets.
+- [Education](./prompts/education/practice-quiz-creator/README.md): Making science quizzes.
+
+Each folder has the prompt, instructions, design notes, and saved examples.
 
 ## Connect
 
-* **GitHub:** https://github.com/christianwlewis8-dot
-* **LinkedIn:** https://www.linkedin.com/in/christian-lewis-1b516a432
-* **Email:** christianwlewis8@gmail.com
-
+- **GitHub:** https://github.com/christianwlewis8-dot
+- **LinkedIn:** https://www.linkedin.com/in/christian-lewis-1b516a432
+- **Email:** christianwlewis8@gmail.com

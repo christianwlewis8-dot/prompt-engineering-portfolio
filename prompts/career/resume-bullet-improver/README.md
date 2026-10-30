@@ -1,55 +1,55 @@
 # Resume Bullet Improver
 
-> *Turns a basic description of work experience into concise, professional resume bullets without inventing details.*
+> *Turns a basic job description into clear resume bullets without making up details.*
 
 ## Overview
 
-This prompt uses the C-A-R-E (Context, Action, Result, Example) framework to improve a weak resume bullet. It gives the AI background about the applicant, explains the requested revision, defines the required output, and provides an example of the desired style.
+This prompt helps someone describe work they have done. It asks for three short options based on the person's real duties and includes an example of the writing style.
 
 **Best for:**
 
-- Improving resume bullets for part-time jobs
-- Highlighting responsibilities and transferable skills
-- Creating multiple concise options without fake metrics
+- Describing experience from a part time job
+- Showing skills learned at work
+- Getting three short ways to describe the same experience
 
-**Structure:** C-A-R-E Framework (Context, Action, Result, Example)
+**Structure:** CARE: Context, Action, Result, Example
 
-**Technique:** Few-shot prompting
+**Technique:** Few shot: shows an example for the AI to follow.
 
-**Output:** Three professional, one-sentence resume bullets under 30 words each.
+**Output:** Three resume bullets, each one sentence and fewer than 30 words.
 
 ---
 
 ## Quick Start
 
-1. Open [`prompt.md`](./prompt.md) and copy the template.
-2. Replace the placeholders:
-   - `[APPLICANT_DESCRIPTION]`: The applicant's current level or background (e.g., high school student).
-   - `[TARGET_JOB]`: The job or type of position being pursued (e.g., part-time customer-service job).
-   - `[ORIGINAL_BULLET]`: The basic resume bullet that needs improvement.
-   - `[RESPONSIBILITIES]`: Duties and skills the applicant actually performed.
-3. Paste it into your AI model of choice and run it.
-4. Review the output and adapt it to what you need.
+1. Open [`prompt.md`](./prompt.md) and copy the prompt.
+2. Fill in these blanks:
+   - `[APPLICANT_DESCRIPTION]`: Who is writing the resume, such as a high school student.
+   - `[TARGET_JOB]`: The job they want.
+   - `[ORIGINAL_BULLET]`: The resume sentence they want to improve.
+   - `[RESPONSIBILITIES]`: The work they actually did.
+3. Paste the prompt into an AI chat.
+4. Read the answer and check it before using it.
 
 ---
 
 ## Examples
 
-See the [`examples/`](./examples/) folder for filled-in demonstrations showing the prompt and the resulting output.
+See [`examples/`](./examples/) for saved prompts and answers. The [original example](./examples/output_comparison.md) uses the earlier wording.
 
 ---
 
 ## Customization Tips
 
-- **Want more detail?** Provide more actual responsibilities in [RESPONSIBILITIES].
-- **Want it shorter?** Lower the word limit in the Result section.
-- **Different context?** Change [APPLICANT_DESCRIPTION] and [TARGET_JOB] for another applicant or role.
+- **Want more detail?** Add more useful details to the inputs.
+- **Want it shorter?** Ask for a shorter answer.
+- **Different context?** Change the inputs to fit the person or situation.
 
 ---
 
 ## Technical Details
 
-- **Structure:** C-A-R-E Framework (Context, Action, Result, Example)
-- **Technique:** Few-shot prompting
-- **Best models:** No comparison across models has been documented.
-- **Placeholders:** 4 inputs: `[APPLICANT_DESCRIPTION]`, `[TARGET_JOB]`, `[ORIGINAL_BULLET]`, `[RESPONSIBILITIES]`.
+- **Structure:** CARE: Context, Action, Result, Example
+- **Technique:** Few shot: shows an example for the AI to follow.
+- **Best models:** No comparison between AI models has been recorded.
+- **Placeholders:** 4 blanks: `[APPLICANT_DESCRIPTION]`, `[TARGET_JOB]`, `[ORIGINAL_BULLET]`, `[RESPONSIBILITIES]`.
